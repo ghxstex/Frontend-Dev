@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Theme Switcher</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            transition: background 0.3s, color 0.3s;
+        }
+        .theme-light {
+            background: #ffffff;
+            color: #000000;
+        }
+        .theme-dark {
+            background: #222222;
+            color: #ffffff;
+        }
+        .theme-blue {
+            background: #0e4b8b;
+            color: #ffffff;
+        }
+        button {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body class="theme-light" data-theme="light">
+    <h2>Theme Switcher</h2>
+
+    <button data-theme-btn="light">Light</button>
+    <button data-theme-btn="dark">Dark</button>
+    <button data-theme-btn="blue">Blue</button>
+
+    <p>Current theme is stored in body data-theme attribute.</p>
+
+    <script src="q4.js"></script>
+</body>
+</html>

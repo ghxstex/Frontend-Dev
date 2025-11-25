@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multi Step Form</title>
+    <style>
+        .step { display: none; margin-top: 10px; }
+        .step.active { display: block; }
+        .summary { margin-top: 15px; border-top: 1px solid #ccc; padding-top: 10px; }
+        .error { color: red; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+    <h2>Multi-Step Form</h2>
+
+    <div id="step1" class="step active">
+        <label>Name:
+            <input type="text" id="nameInput">
+        </label>
+        <div id="nameError" class="error"></div>
+        <br>
+        <button id="next1">Next</button>
+    </div>
+
+    <div id="step2" class="step">
+        <label>Email:
+            <input type="email" id="emailInput">
+        </label>
+        <div id="emailError" class="error"></div>
+        <br>
+        <button id="back2">Back</button>
+        <button id="next2">Next</button>
+    </div>
+
+    <div id="step3" class="step">
+        <label>Password:
+            <input type="password" id="passwordInput">
+        </label>
+        <div id="passwordError" class="error"></div>
+        <br>
+        <button id="back3">Back</button>
+        <button id="finishBtn">Finish</button>
+    </div>
+
+    <div id="summaryBox" class="summary" style="display:none;"></div>
+
+    <script src="q3.js"></script>
+</body>
+</html>
