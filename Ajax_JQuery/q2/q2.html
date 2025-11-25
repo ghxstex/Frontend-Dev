@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Highlight</title>
+    <style>
+        body { font-family: Arial; padding: 20px; }
+        main { display: flex; gap: 12px; flex-wrap: wrap; }
+        .product { border: 1px solid #ccc; padding: 10px; width: 160px; position: relative; }
+        .product[data-discount="true"] { border-color: green; }
+        .highlighted { background-color: #ffe9a6; }
+        .favorite { position: absolute; right: 8px; top: 8px; cursor: pointer; }
+        .favorite.selected { color: red; }
+        .details { display: none; margin-top: 5px; font-size: 0.85rem; }
+    </style>
+</head>
+<body>
+    <header><h1>Products</h1></header>
+
+    <main>
+        <article class="product" data-discount="true" data-stock="in">
+            <span class="favorite">&#9733;</span>
+            <h3>Phone</h3>
+            <p>₹15000</p>
+            <p class="details">4GB RAM</p>
+        </article>
+
+        <article class="product" data-discount="false" data-stock="out">
+            <span class="favorite">&#9733;</span>
+            <h3>Laptop</h3>
+            <p>₹55000</p>
+            <p class="details">i5 Processor</p>
+        </article>
+
+        <article class="product" data-discount="true" data-stock="in">
+            <span class="favorite">&#9733;</span>
+            <h3>Headphones</h3>
+            <p>₹1200</p>
+            <p class="details">Wireless</p>
+        </article>
+
+        <article class="product" data-discount="false" data-stock="in">
+            <span class="favorite">&#9733;</span>
+            <h3>Watch</h3>
+            <p>₹2500</p>
+            <p class="details">Water Resistant</p>
+        </article>
+
+        <article class="product" data-discount="true" data-stock="out">
+            <span class="favorite">&#9733;</span>
+            <h3>Camera</h3>
+            <p>₹30000</p>
+            <p class="details">24MP Lens</p>
+        </article>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="q2.js"></script>
+</body>
+</html>

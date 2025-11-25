@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Courses</title>
+    <style>
+        body { font-family: Arial; padding: 20px; }
+        li { margin: 4px 0; }
+        .match { background: #fff3a3; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <header><h1>Course Search</h1></header>
+
+    <main>
+        <input type="text" id="searchBox">
+        <button id="clearBtn">Clear</button>
+
+        <ul id="courseList">
+            <li>Full Stack Web Development</li>
+            <li>Data Structures and Algorithms</li>
+            <li>Machine Learning Basics</li>
+            <li>Database Management Systems</li>
+            <li>Computer Networks</li>
+        </ul>
+
+        <p id="countDisplay"></p>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="q7.js"></script>
+</body>
+</html>
