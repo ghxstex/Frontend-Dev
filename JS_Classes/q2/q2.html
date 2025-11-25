@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Student Form</title>
+    <style>
+        form { width: 320px; font-family: Arial; }
+        input { width: 100%; padding: 6px; margin-top: 4px; }
+        .error { color: red; font-size: 0.8rem; }
+        .success { color: green; }
+    </style>
+</head>
+<body>
+<h2>Student Registration</h2>
+<form id="studentForm">
+    <label>Name:<input type="text" id="name"><span class="error" id="nameErr"></span></label>
+    <label>Email:<input type="text" id="email"><span class="error" id="emailErr"></span></label>
+    <label>Phone:<input type="text" id="phone"><span class="error" id="phoneErr"></span></label>
+    <label>Password:<input type="password" id="password"><span class="error" id="passErr"></span></label>
+    <button type="submit">Submit</button>
+    <div id="msg" class="success"></div>
+</form>
+<script src="q2.js"></script>
+</body>
+</html>
