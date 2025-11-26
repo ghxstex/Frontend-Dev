@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Academic Performance Dashboard</title>
+    <link rel="stylesheet" href="theme.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+
+<section class="wrapper mt-5 p-4 card shadow-lg glass-ui">
+    <h2 class="text-center fw-bold">Student Result Management System</h2>
+    <p class="text-center subtitle">Manage students, sections and exam scores efficiently</p>
+
+    <ul class="nav nav-tabs mt-3" id="dashboardTabs">
+        <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab" data-bs-target="#tabStudents">Students</a></li>
+        <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" data-bs-target="#tabSections">Sections</a></li>
+        <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" data-bs-target="#tabResults">Results</a></li>
+    </ul>
+
+    <div class="tab-content">
+
+        
+        <div class="tab-pane fade show active mt-4" id="tabStudents">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h4 class="fw-semibold">Student Management</h4>
+                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#studentBox">Add Student</button>
+            </div>
+            <table class="table table-hover">
+                <thead><tr><th>Name</th><th>Email</th><th>Section</th><th>Enrollment</th><th>Actions</th></tr></thead>
+                <tbody id="tbl_students"></tbody>
+            </table>
+        </div>
+
+        <div class="tab-pane fade mt-4" id="tabSections">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h4 class="fw-semibold">Section Management</h4>
+                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#sectionBox">Add Section</button>
+            </div>
+            <table class="table table-hover">
+                <thead><tr><th>Name</th><th>Description</th><th>Total Students</th><th>Actions</th></tr></thead>
+                <tbody id="tbl_sections"></tbody>
+            </table>
+        </div>
+
+        <div class="tab-pane fade mt-4" id="tabResults">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h4 class="fw-semibold">Result Management</h4>
+                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#resultBox">Add Result</button>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-3"><select id="optStudent" class="form-select"></select></div>
+                <div class="col-md-3"><select id="optSubject" class="form-select"></select></div>
+            </div>
+
+            <table class="table table-hover">
+                <thead><tr><th>Student</th><th>Subject</th><th>Marks</th><th>Grade</th><th>Date</th><th>Actions</th></tr></thead>
+                <tbody id="tbl_results"></tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<div class="modal fade" id="studentBox">
+    <div class="modal-dialog"><div class="modal-content p-3">
+        <h5 class="fw-semibold">Add / Edit Student</h5>
+        <input id="inpSName" class="form-control mt-2" placeholder="Name">
+        <input id="inpSEmail" class="form-control mt-2" placeholder="Email">
+        <select id="inpSClass" class="form-control mt-2"></select>
+        <input id="inpSJoin" type="date" class="form-control mt-2">
+        <div class="text-end mt-3"><button class="btn btn-primary" onclick="storeStudent()">Save</button></div>
+    </div></div>
+</div>
+
+
+<div class="modal fade" id="sectionBox">
+    <div class="modal-dialog"><div class="modal-content p-3">
+        <h5 class="fw-semibold">Add / Edit Section</h5>
+        <input id="inpCName" class="form-control mt-2" placeholder="Name">
+        <textarea id="inpCDesc" class="form-control mt-2" placeholder="Description"></textarea>
+        <div class="text-end mt-3"><button class="btn btn-primary" onclick="storeSection()">Save</button></div>
+    </div></div>
+</div>
+
+
+<div class="modal fade" id="resultBox">
+    <div class="modal-dialog"><div class="modal-content p-3">
+        <h5 class="fw-semibold">Add / Edit Result</h5>
+        <select id="inpRStudent" class="form-control mt-2"></select>
+        <input id="inpRSubject" class="form-control mt-2" placeholder="Subject">
+        <input id="inpRMarks" type="number" class="form-control mt-2" placeholder="Marks (0-100)">
+        <input id="inpRDate" type="date" class="form-control mt-2">
+        <div class="text-end mt-3"><button class="btn btn-primary" onclick="storeResult()">Save</button></div>
+    </div></div>
+</div>
+
+<script src="logic.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

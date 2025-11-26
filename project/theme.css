@@ -1,0 +1,95 @@
+/* Fullscreen background */
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Blurred image */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url("pic1.jpg") center/cover no-repeat;
+    filter: blur(10px) brightness(65%);
+    z-index: -1;
+}
+
+/* Main glass container */
+.glass-ui {
+    background: rgba(255, 255, 255, 0.09);
+    backdrop-filter: blur(22px) saturate(180%);
+    -webkit-backdrop-filter: blur(22px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 18px;
+    color: #f0f0f0;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* good spacing */
+.wrapper {
+    margin-top: 40px;
+    padding: 45px !important;
+}
+
+.subtitle {
+    opacity: .85;
+    margin-bottom: 5px;
+}
+
+/* GLASS TABLE */
+.table {
+    background: rgba(255, 255, 255, 0.06) !important;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-radius: 12px;
+    color: #ffffff;
+}
+
+.table thead {
+    background: rgba(255, 255, 255, 0.12) !important;
+    color: #ffffff;
+}
+
+.table-hover tbody tr:hover {
+    background: rgba(255, 255, 255, 0.15) !important;
+}
+
+/* Buttons */
+.btn {
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+.btn-success {
+    background: #17b169 !important;
+    border: none;
+}
+
+.btn-success:hover {
+    background: #108a51 !important;
+}
+
+.btn-dark {
+    background: #3b3b3b !important;
+    border: none;
+}
+
+/* Modal: keep readable */
+.modal-content {
+    background: rgba(255, 255, 255, 0.93);
+    backdrop-filter: blur(6px);
+    border-radius: 12px;
+    color: #111;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .wrapper { padding: 18px !important; }
+}
